@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dailyNoteFragment">
+
+    <fragment
+        android:id="@+id/dailyNoteFragment"
+        android:name="com.example.hw_noteapp.ui.notes.DailyNoteFragment"
+        android:label="DailyNoteFragment"
+        tools:layout="@layout/fragment_daily_note">
+        <action
+            android:id="@+id/action_dailyNoteFragment_to_detailFragment"
+            app:destination="@id/btn_back" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/complatedFragment"
+        android:name="layout.ComplatedFragment"
+        android:label="ComplatedFragment"
+        tools:layout="@layout/fragment_complated">
+        <action
+            android:id="@+id/action_complatedFragment_to_detailFragment"
+            app:destination="@id/btn_back" />
+    </fragment>
+    <fragment
+        android:id="@+id/btn_back"
+        android:name="com.example.hw_noteapp.ui.notes.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+
+        <argument
+            android:name="note"
+            app:argType="com.example.hw_noteapp.data.model.NoteModel" />
+
+    </fragment>
+</navigation>
